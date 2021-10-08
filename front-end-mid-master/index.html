@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>HalidMuhammad - Mid</title>
+</head>
+<body>
+    <header class="navbar navbar-expand-lg bg-primary navbar-light">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand text-white">WEB MINIAPP</a>
+            </div>
+            <ul class="navbar-nav">
+                <li>
+                    <a href="#">HOME</a>
+                </li>
+                <li>
+                    <a href="about.html">ABOUT</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="container col-sm-6">
+            <form class="formulir">
+                <div class="form-group">
+                    <label>Student Id</label>
+                    <input class="form-control" type="text" placeholder="Masukkan ID Anda" id="id">
+                </div>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input class="form-control" type="text" placeholder="Masukkan Nama Anda" id="fullname">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" name="gender" type="radio"  id="male" value="male">
+                    <label class="form-check-label">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check=input" name="gender" type="radio"  id="female" value="female">
+                    <label class="form-check-label"> Female</label>
+                </div>
+                <div class="form-group">
+                    <label>Faculty</label>
+                    <select name="" id="fakultas" class="form-control">
+                        <option value="komputer">Fakultas Ilmu Komputer</option>
+                        <option value="filsafat">Fakultas Filsafat</option>
+                        <option value="ekonomi">Fakultas Ekonomi dan Bisnis</option>
+                        <option value="pertanian">Fakultas Pertanian</option>
+                        <option value="keperawatan">Fakultas Keperawatan</option>
+                        <option value="pendidikan">Fakultas Pendidikan</option>
+                        <option value="sekertarist">Fakultas Akademi Sekertarist</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Prodi</label>
+                    <select name="" id="jurusan" class="form-control">
+                        <option value="informatika">Teknik Informatika</option>
+                        <option value="informasi">Sistem Informasi</option>
+                        <option value="akutansi">Akutansi</option>
+                        <option value="manangement">Management</option>
+                        <option value="ipro">Ipro</option>
+                        <option value="perawat">Perawat</option>
+                        <option value="ners">Profesi Ners</option>
+                        <option value="pertanian">Pertanian</option>
+                        <option value="inggris">Bahasa Inggris</option>
+                        <option value="agama">Agama</option>
+                        <option value="ekonomi">Ekonomi</option>
+                        <option value="sekolah">Pendidikan Luar Sekolah</option>
+                        <option value="sekertarist">Sekertaris</option>
+                        <option value="filsafat">Fisafat</option>
+                        <option value="magisterfilsafat">Magister Filsafat</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary btn-block btn-lg">Submit</button>
+            </form>
+        </div>
+
+        <div class="container col-sm-6">
+            <div class="form-group">
+                <label>Faculty</label>
+                <select name="" id="filterfakultas" class="form-control">
+                    <option value="komputer">Fakultas Ilmu Komputer</option>
+                    <option value="filsafat">Fakultas Filsafat</option>
+                    <option value="ekonomi">Fakultas Ekonomi dan Bisnis</option>
+                    <option value="pertanian">Fakultas Pertanian</option>
+                    <option value="keperawatan">Fakultas Keperawatan</option>
+                    <option value="pendidikan">Fakultas Pendidikan</option>
+                    <option value="sekertarist">Fakultas Akademi Sekertarist</option>
+                </select>
+                <button class="btn btn-primary btn-block btn-lg mt-2" onclick="filter1();">Submit</button>
+            </div>
+            <div class="form-group">
+                <label>Prodi</label>
+                <select name="" id="filterprodi" class="form-control">
+                    <option value="informatika">Teknik Informatika</option>
+                    <option value="informasi">Sistem Informasi</option>
+                    <option value="akutansi">Akutansi</option>
+                    <option value="manangement">Management</option>
+                    <option value="ipro">Ipro</option>
+                    <option value="perawat">Perawat</option>
+                    <option value="ners">Profesi Ners</option>
+                    <option value="pertanian">Pertanian</option>
+                    <option value="inggris">Bahasa Inggris</option>
+                    <option value="agama">Agama</option>
+                    <option value="ekonomi">Ekonomi</option>
+                    <option value="sekolah">Pendidikan Luar Sekolah</option>
+                    <option value="sekertarist">Sekertaris</option>
+                    <option value="filsafat">Fisafat</option>
+                    <option value="magisterfilsafat">Magister Filsafat</option>
+                </select>
+                <button class="btn btn-primary btn-block btn-lg mt-2" onclick="filter2();">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-5">
+        <h1>Our Student</h1>
+        <input type="text" placeholder="Search" class="search" onkeyup="filterSearching(this)">
+        <table class="table table-striped">
+            <thead>
+                <th>Nama</th>
+                <th>ID</th>
+                <th>Gender</th>
+                <th>Fakultas</th>
+                <th>Prodi</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>Made With </p>
+        <p>&copy;muhamadHalid. all right reserved</p>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>

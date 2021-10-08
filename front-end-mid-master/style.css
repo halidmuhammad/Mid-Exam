@@ -1,0 +1,33 @@
+body{
+    min-height: 100vh;
+    position: relative;
+
+}
+
+a{
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+li{
+    list-style: none !important;
+    margin-right: 10px;
+}
+
+ul{
+    margin-top: 15px !important;
+}
+
+footer{
+    height: 80px;
+    width: 100%;
+    background: #337ab7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 200px;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+}
